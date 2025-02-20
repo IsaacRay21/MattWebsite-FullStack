@@ -1,0 +1,16 @@
+{
+    "slides": [
+        {
+            "src" : "https://preview.redd.it/1wizu260amk71.png?width=1080&crop=smart&auto=webp&s=0fdafff09ab285ff20e9f925d4a6fd30d9b90425",
+            "alt": "Img 1"
+        },
+        {
+            "src" : "https://ychef.files.bbci.co.uk/1280x720/p0b7cxng.jpg",
+            "alt": "Img 2"
+        },
+        {
+            "src" : "https://ychef.files.bbci.co.uk/1280x720/p0fz9jgj.jpg",
+            "alt": "Img 3"
+        }
+    ]
+}
