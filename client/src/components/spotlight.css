@@ -1,0 +1,46 @@
+.spotlight {
+    display: flex;
+    justify-content: center;
+    height: 75vh;
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    .spotlight {
+        flex-direction: row;
+    }
+}
+
+.story_carousel {
+    height:60%;
+}
+
+@media (min-width: 700px) {
+    .story_carousel {
+        width: 60%;
+        height: 100%;
+    }
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-overflow: ellipsis; 
+    height: 40%;
+}
+
+@media (min-width: 700px) {
+    .story {
+        width :35%;
+        height : 100%;
+    }
+}
+
+.story > p {
+    max-height: 80%;
+    overflow: auto;
+    text-overflow: ellipsis;
+    text-align: left;
+}
