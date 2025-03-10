@@ -1,5 +1,8 @@
 
-
+.photo {
+  display: flex;
+  flex-direction: column;
+}
 .content {
   text-align: center;
   display: flex;
@@ -9,10 +12,33 @@
 
 }
 
-
 .content > * {
-  padding-bottom: 2vh;
+  margin-bottom: 2rem;
 }
+
+.top_pad{
+  min-height: 4rem;
+  max-height: 4rem;
+  margin: 0;
+}
+
+.bottom_pad{
+  min-height: 1rem;
+  max-height: 1rem;
+  margin: 0;
+}
+
+.main_carousel {
+  max-height: calc(100% - 5rem);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.footer {
+  height: 100px;
+}
+
 
 body {
   margin: 0;

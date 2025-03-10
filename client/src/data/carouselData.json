@@ -2,15 +2,29 @@
     "slides": [
         {
             "src" : "https://preview.redd.it/1wizu260amk71.png?width=1080&crop=smart&auto=webp&s=0fdafff09ab285ff20e9f925d4a6fd30d9b90425",
-            "alt": "Img 1"
+            "alt": "Img 1",
+            "title": "Image 1" 
         },
         {
             "src" : "https://ychef.files.bbci.co.uk/1280x720/p0b7cxng.jpg",
-            "alt": "Img 2"
+            "alt": "Img 2",
+            "title": "Image 2"
         },
         {
             "src" : "https://ychef.files.bbci.co.uk/1280x720/p0fz9jgj.jpg",
-            "alt": "Img 3"
+            "alt": "Img 3",
+            "title": "Image 3"
+        },
+        {
+            "src" : "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
+            "alt": "Img 4",
+            "title": "Image 4"
+        },
+        {
+            "src" : "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg",
+            "alt": "Img 5",
+            "title": "Image 5"
         }
+        
     ]
 }

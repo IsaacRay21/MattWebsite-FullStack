@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./carousel.css"
-import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs"
+import {SlArrowLeft, SlArrowRight} from "react-icons/sl"
 
 export const Carousel = ({ data }) => {
     const [slide, setSlide] = useState(0);
@@ -16,11 +16,16 @@ export const Carousel = ({ data }) => {
 
     return (
         <div className="carousel"> 
-            <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide}/>
-            {data.map((item, idx) => (
-                <img src={item.src} key={idx} alt={item.alt} className={slide === idx ? "slide" : "slide slide-hidden"} />
-            ))}
-            <BsArrowRightCircleFill className="arrow arrow-right" onClick={nextSlide}/>
+            <SlArrowLeft className="arrow arrow-left" onClick={prevSlide}/>
+            {data.map((item, idx) => {
+                return (
+                    <div className="slides">
+                        <img src={item.src} key={idx} alt={item.alt} className={slide === idx ? "slide" : "slide slide-hidden"} />
+                        <h1 className={slide === idx ? "title" : "title title-hidden"}> {item.title}</h1>
+                    </div>
+                )
+            })}
+            <SlArrowRight className="arrow arrow-right" onClick={nextSlide}/>
             <span className="indicators">
                 {data.map((_, idx) => {
                     return <button 
