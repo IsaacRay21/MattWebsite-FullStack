@@ -1,12 +1,13 @@
-import { Children, useEffect } from 'react';
+import {useEffect } from 'react';
 import Portal from './portal';
+import "./fullscreenImage.css"
 
 const FullscreenImage = ({src, onClose}) => {
     
 
     useEffect(() => {
         const keyPress = (e) => {
-            if (e.key == 'Escape'){
+            if (e.key === 'Escape'){
                 onClose();
             }
         }

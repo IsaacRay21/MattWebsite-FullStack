@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./carousel.css"
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl"
+import FullscreenImage from "./fullscreenImage"
 
 export const Carousel = ({ data }) => {
+    const [fullscreenImage, setFullscreenImage] = useState(null);
     const [slide, setSlide] = useState(0);
 
     const prevSlide = () => {
@@ -20,7 +22,13 @@ export const Carousel = ({ data }) => {
             {data.map((item, idx) => {
                 return (
                     <div className="slides">
-                        <img src={item.src} key={idx} alt={item.alt} className={slide === idx ? "slide" : "slide slide-hidden"} />
+                        <img 
+                            src={item.src} 
+                            key={idx} 
+                            onClick={() => setFullscreenImage(item.src)} 
+                            alt={item.alt} 
+                            className={slide === idx ? "slide" : "slide slide-hidden"} 
+                        />
                         <h1 className={slide === idx ? "title" : "title title-hidden"}> {item.title}</h1>
                     </div>
                 )
@@ -37,6 +45,13 @@ export const Carousel = ({ data }) => {
                             </button>
                 })}
             </span>
+
+            {fullscreenImage && (
+                <FullscreenImage
+                src={fullscreenImage}
+                onClose={() => setFullscreenImage(null)}
+                />
+            )}
         </div>
     )
 };

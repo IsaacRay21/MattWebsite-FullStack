@@ -4,7 +4,7 @@
     align-items: center;
     width: 98%;
     aspect-ratio: 16/9;
-    max-height: 100%;
+    height: 100%;
     max-width:100%;
     position: relative;
 }
@@ -26,6 +26,7 @@
 
 .slide:hover {
     filter: brightness(50%) blur(2px);
+    cursor: pointer;
 }
 
 .slide-hidden {
@@ -44,6 +45,7 @@
     z-index: 3;
     color: white;
     display: none;
+    pointer-events: none
 }
 
 
