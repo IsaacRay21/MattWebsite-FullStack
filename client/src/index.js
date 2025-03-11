@@ -4,9 +4,11 @@ import Photo from './Photo';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <Photo />
+    <div id="portal-root"></div>
   </React.StrictMode>
 );
 
