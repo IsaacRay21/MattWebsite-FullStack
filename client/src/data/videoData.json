@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "videoUrl": "/videos/14066067-uhd_3840_2160_60fps.mp4",
+        "title": "Serene Beach Bliss in 4K",
+        "description": "Immerse yourself in the tranquil beauty of a pristine beach with crystal-clear waters and golden sands. Captured in stunning 4K resolution at 60fps, this video brings the soothing sounds and sights of the ocean right to your screen. Perfect for relaxation or as a calming backdrop."
+    },
+    {
+        "id": "2",
+        "videoUrl": "/videos/13226680_3840_2160_25fps.mp4",
+        "title": "Majestic Train Journey Through Scenic Landscapes",
+        "description": "Experience the power and elegance of a train gliding through breathtaking landscapes in ultra-high definition. Filmed in 4K at 25fps, this video captures the rhythmic motion and grandeur of a train ride, offering a mesmerizing visual journey."
+    },
+    {
+        "id": "3",
+        "videoUrl": "/videos/10024586-uhd_3242_2160_24fps.mp4",
+        "title": "City Skyline at Dusk: A Modern Marvel",
+        "description": "Witness the awe-inspiring beauty of a city skyline as the sun sets and the lights begin to twinkle. Shot in 4K at 24fps, this video showcases the architectural wonders and vibrant energy of urban life, making it a perfect addition to any modern-themed project."
+    }
+]

@@ -6,7 +6,7 @@ import { Gallery } from "./components/gallery.jsx";
 import packageInfo from "./data/carouselData.json";
 
 
-function App() {
+function Photo() {
   return (
     <div className='photo'>
       <Navbar/>
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default Photo;
