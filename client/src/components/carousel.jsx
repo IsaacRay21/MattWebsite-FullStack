@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./carousel.css"
+import "./css/carousel.css"
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl"
 import FullscreenImage from "./fullscreenImage"
 

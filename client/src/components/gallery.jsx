@@ -1,4 +1,4 @@
-import "./gallery.css"
+import "./css/gallery.css"
 import {useState} from 'react'
 import FullscreenImage from "./fullscreenImage"
 

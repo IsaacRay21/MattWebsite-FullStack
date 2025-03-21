@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import './Video.css';
-import { Navbar } from "./components/navbar.jsx";
-import packageInfo from "./data/videoData.json";
+import './css/Video.css';
+import { Navbar } from "../components/navbar.jsx";
+import packageInfo from "../data/videoData.json";
 
 function Video() {
   return (

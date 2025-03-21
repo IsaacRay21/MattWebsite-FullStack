@@ -1,5 +1,5 @@
-import './Home.css';
-import { Navbar } from "./components/navbar.jsx";
+import './css/Home.css';
+import { Navbar } from "../components/navbar.jsx";
 
 function Home() {
   return (

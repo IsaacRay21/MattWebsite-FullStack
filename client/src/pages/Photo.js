@@ -1,9 +1,9 @@
-import './Photo.css';
-import { Carousel } from "./components/carousel.jsx";
-import { Navbar } from "./components/navbar.jsx";
-import { Spotlight} from "./components/spotlight.jsx";
-import { Gallery } from "./components/gallery.jsx";
-import packageInfo from "./data/carouselData.json";
+import './css/Photo.css';
+import { Carousel } from "../components/carousel.jsx";
+import { Navbar } from "../components/navbar.jsx";
+import { Spotlight} from "../components/spotlight.jsx";
+import { Gallery } from "../components/gallery.jsx";
+import packageInfo from "../data/carouselData.json";
 
 
 function Photo() {

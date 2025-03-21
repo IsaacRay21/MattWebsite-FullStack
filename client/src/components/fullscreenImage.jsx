@@ -1,6 +1,6 @@
 import {useEffect } from 'react';
 import Portal from './portal';
-import "./fullscreenImage.css"
+import "./css/fullscreenImage.css"
 
 const FullscreenImage = ({src, onClose}) => {
     
