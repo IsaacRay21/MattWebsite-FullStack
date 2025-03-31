@@ -1,4 +1,4 @@
-import "./spotlight.css"
+import "./css/spotlight.css"
 import React, { useEffect, useRef, useState } from 'react';
 import packageInfo from "../data/carouselData.json";
 import { Carousel } from "./carousel"
