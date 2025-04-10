@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './index.css';
 import Home from './pages/Home';
 import Photo from './pages/Photo';
 import Video from './pages/Video';
@@ -9,9 +10,9 @@ import Contact from './pages/Contact';
 
 import reportWebVitals from './reportWebVitals';
 
-
 export default function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}/> 

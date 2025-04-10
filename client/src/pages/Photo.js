@@ -11,7 +11,6 @@ function Photo() {
     <div className='photo'>
       <Navbar/>
       <div className="content"> 
-        <div className='top_pad'></div>
         <div className='main_carousel'>
           <Carousel data={packageInfo.slides} /> 
         </div>

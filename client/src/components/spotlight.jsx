@@ -49,7 +49,7 @@ export const Spotlight = () => {
     }, []); 
 
     return (
-        <div className="spotlight">
+        <div className="spotlight-container">
             <div className="story_carousel" ref={story_carouselRef}>
                 <Carousel data={packageInfo.slides}/>
             </div>

@@ -9,7 +9,6 @@ function Video() {
     <div className='video'>
       <Navbar/>
       <div className="content"> 
-        <div className='top_pad'></div>
             {packageInfo.map((video, idx) => {
                 return( 
                     <div className="video-container" id={"video_" + idx}>

@@ -3,43 +3,35 @@
   display: flex;
   flex-direction: column;
 }
-.content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh
-
-}
-
-.content > * {
-  margin-bottom: 2rem;
-}
-
-.top_pad{
-  min-height: 4rem;
-  max-height: 4rem;
-  margin: 0;
-}
-
-.bottom_pad{
-  min-height: 1rem;
-  max-height: 1rem;
-  margin: 0;
-}
 
 .main_carousel {
-  height: calc(100% - 5rem);
+  height: 80vh;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.footer {
-  height: 100px;
+.carousel-container {
+  padding: 0 2rem;
+  height: 100%;
 }
 
+.gallery-container {
+  height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+}
 
-body {
-  margin: 0;
+.spotlight-container {
+  height: auto;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }

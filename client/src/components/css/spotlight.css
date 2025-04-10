@@ -1,14 +1,13 @@
-.spotlight {
+.spotlight-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
     box-sizing: border-box;
 }
 
-@media (min-width: 700px) {
-    .spotlight {
+@media (min-width: 1000px) {
+    .spotlight-container {
         flex-direction: row;
         align-items: flex-start;
     }
@@ -41,21 +40,24 @@
     margin: 0;
     overflow-y: auto;
     max-height: 50vh;
+    line-height: 1.6;
     text-align: left;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1000px) {
     .story_carousel {
-        width: 60%;
+        width: 70%;
         height: auto;
     }
 
     .story {
-        width: 35%;
+        width: 30%;
         height: 100%;
     }
 
     .story > p {
-        height: auto
+        height: auto;
+        padding-right: 1rem;
+        margin-bottom: 2rem;
     }
 }

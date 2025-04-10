@@ -17,7 +17,7 @@ export const Carousel = ({ data }) => {
 
 
     return (
-        <div className="carousel"> 
+        <div className="carousel-container"> 
             <SlArrowLeft className="arrow arrow-left" onClick={prevSlide}/>
             {data.map((item, idx) => {
                 return (

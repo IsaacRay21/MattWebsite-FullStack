@@ -6,7 +6,7 @@ export const Gallery = ({data}) => {
     const [fullscreenImage, setFullscreenImage] = useState(null);
 
     return (
-        <div className="gallery">
+        <div className="gallery-container">
             {data.map((item, idx) => {
                 return (
                     <div className="gallery_container">
