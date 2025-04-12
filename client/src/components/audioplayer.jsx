@@ -43,7 +43,5 @@ export const AudioPlayer = ({url}) => {
         <BsFillPauseFill onClick={handlePlayPause} className={playing ? "playpause-button" : "playpause-button hide-playpause-button"}></BsFillPauseFill>
         <div ref={waveformRef} className="waveform"></div>
     </div>
-    
-
   );
 }

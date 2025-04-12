@@ -3,7 +3,6 @@ import { Carousel } from "../components/carousel.jsx";
 import { Navbar } from "../components/navbar.jsx";
 import { Spotlight} from "../components/spotlight.jsx";
 import { Gallery } from "../components/gallery.jsx";
-import packageInfo from "../data/carouselData.json";
 
 
 function Photo() {
@@ -12,10 +11,10 @@ function Photo() {
       <Navbar/>
       <div className="content"> 
         <div className='main_carousel'>
-          <Carousel data={packageInfo.slides} /> 
+          <Carousel type="maincarousel" /> 
         </div>
-        <Spotlight data={packageInfo.slides}/>
-        <Gallery data={packageInfo.slides}/>
+        <Spotlight type="storycarousel"/>
+        <Gallery/>
       </div>
     </div>
 

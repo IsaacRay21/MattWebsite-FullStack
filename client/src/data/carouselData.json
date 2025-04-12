@@ -1,29 +1,49 @@
 {
     "slides": [
         {
-            "src" : "https://preview.redd.it/1wizu260amk71.png?width=1080&crop=smart&auto=webp&s=0fdafff09ab285ff20e9f925d4a6fd30d9b90425",
+            "src" : "/photo/1.jpg",
             "alt": "Img 1",
             "title": "Image 1" 
         },
         {
-            "src" : "https://ychef.files.bbci.co.uk/1280x720/p0b7cxng.jpg",
+            "src" : "/photo/2.jpg",
             "alt": "Img 2",
-            "title": "Image 2"
+            "title": "Image 2" 
         },
         {
-            "src" : "https://ychef.files.bbci.co.uk/1280x720/p0fz9jgj.jpg",
+            "src" : "/photo/3.jpg",
             "alt": "Img 3",
-            "title": "Image 3"
+            "title": "Image 3" 
         },
         {
-            "src" : "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
+            "src" : "/photo/4.jpg",
             "alt": "Img 4",
-            "title": "Image 4"
+            "title": "Image 4" 
         },
         {
-            "src" : "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg",
+            "src" : "/photo/5.jpg",
             "alt": "Img 5",
-            "title": "Image 5"
+            "title": "Image 5" 
+        },
+        {
+            "src" : "/photo/6.jpg",
+            "alt": "Img 6",
+            "title": "Image 6" 
+        },
+        {
+            "src" : "/photo/7.jpg",
+            "alt": "Img 7",
+            "title": "Image 7" 
+        },
+        {
+            "src" : "/photo/8.jpg",
+            "alt": "Img 8",
+            "title": "Image 8" 
+        },
+        {
+            "src" : "/photo/9.jpg",
+            "alt": "Img 9",
+            "title": "Image 9" 
         }
         
     ]

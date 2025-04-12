@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./css/carousel.css"
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl"
 import FullscreenImage from "./fullscreenImage"
 
-export const Carousel = ({ data }) => {
+export const Carousel = ({ type="" }) => {
     const [fullscreenImage, setFullscreenImage] = useState(null);
     const [slide, setSlide] = useState(0);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const prevSlide = () => {
         setSlide(slide === 0? data.length - 1: slide - 1);
@@ -15,21 +18,44 @@ export const Carousel = ({ data }) => {
         setSlide(slide === data.length - 1? 0 : slide + 1);
     };
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`/api/photo/${type}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const result = await response.json();
+                setData(result);
+            } catch (err) {
+                console.error("Failed to load Data:", err);
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) return <div className="carousel-container">Loading...</div>;
+    if (error) return <div className="carousel-container">Error: {error}</div>;
+    if (!data) return <div className="carousel-container">No data available</div>;
 
     return (
         <div className="carousel-container"> 
             <SlArrowLeft className="arrow arrow-left" onClick={prevSlide}/>
-            {data.map((item, idx) => {
+            {data.map((photo, idx) => {
                 return (
                     <div className="slides">
                         <img 
-                            src={item.src} 
+                            src={photo.photo_filename} 
                             key={idx} 
-                            onClick={() => setFullscreenImage(item.src)} 
-                            alt={item.alt} 
+                            onClick={() => setFullscreenImage(photo.photo_filename)} 
+                            alt={photo.description} 
                             className={slide === idx ? "slide" : "slide slide-hidden"} 
                         />
-                        <h1 className={slide === idx ? "title" : "title title-hidden"}> {item.title}</h1>
+                        <p className={slide === idx ? "title" : "title title-hidden"}> {photo.description}</p>
                     </div>
                 )
             })}

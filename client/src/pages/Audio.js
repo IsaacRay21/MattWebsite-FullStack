@@ -1,44 +1,62 @@
-import {React} from 'react'
+import {React, useState, useEffect} from 'react'
 import './css/Audio.css';
 import { Navbar } from "../components/navbar.jsx";
 import { AudioPlayer } from "../components/audioplayer.jsx";
 
-let data = [
-  {
-    "url": "/audio/audio2.mp3",
-    "title": "Pinegrove - Alaska",
-    "img": "https://f4.bcbits.com/img/a2227207840_10.jpg"
-  },
-  {
-    "url": "/audio/audio1.mp3",
-    "title": "Relaxing Piano Music",
-    "img": "https://images.squarespace-cdn.com/content/v1/5ee52f7d9edc8a7ee635591a/8df50655-6b68-460e-ad6c-5230001b9d5a/240404+-+063944+-+001.jpg"
-  }
-]
-
 function Audio() {
-  return (
-    <div className='audio'>
-      <Navbar/>
-      <div className="content"> 
-        <div className='top_pad'></div>
-            {data.map((audio, idx) => {
-                return( 
-                    <div className="audio-container" id={"audio" + idx}>
-                        <div className='audio-photo'>
-                          <img src={audio.img} alt="audio thumbnail"></img>
-                        </div>
-                        <div className="audio-other" id={"audio" + idx +"_text"}>
-                            <h1>{audio.title}</h1>
-                            <AudioPlayer url={audio.url}/>
-                            {/* <p>{audio.description}</p> */}
-                        </div>
-                    </div>
-                )   
-            })}    
-        </div>
-    </div>
-  )
+	const [data, setData] = useState(null);
+  	const [loading, setLoading] = useState(true);
+  	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch('/api/audio');
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				const result = await response.json();
+				setData(result);
+			} catch (err) {
+				console.error("Failed to load Data:", err);
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchData();
+	}, []);
+
+	if (loading) return <div className="audio-container">Loading...</div>;
+	if (error) return <div className="audio-container">Error: {error}</div>;
+	if (!data) return <div className="audio-container">No data available</div>;
+
+
+	return (
+		<div className='audio'>
+			<Navbar/>
+			<div className="content"> 
+				{data.map((audio, idx) => {
+					return( 
+						<div className="audio-container" id={"audio" + idx}>
+							{audio.photo_filename && (
+								<div className='audio-photo'>
+									<img src={audio.photo_filename} alt="audio thumbnail"></img>
+								</div>
+								)
+							}
+							<div className="audio-other" id={"audio" + idx +"_text"}>
+								{audio.title && <h1>{audio.title}</h1>}
+								{audio.audio_filename && <AudioPlayer url={audio.audio_filename}/>}
+								{/* <p>{audio.description}</p> */}
+							</div>
+						</div>
+					)   
+				})}    
+			</div>
+		</div>
+	)
 }
 
 export default Audio;
