@@ -18,6 +18,7 @@ const videoRoutes = require('./routes/video');
 const audioRoutes = require('./routes/audio');
 const heroRoutes = require('./routes/hero');
 const linkRoutes = require('./routes/link');
+const spotlightRoutes = require('./routes/spotlight');
 
 app.use('/api/about', aboutRoutes);
 app.use('/api/photo', photoRoutes);
@@ -25,6 +26,7 @@ app.use('/api/video', videoRoutes);
 app.use('/api/audio', audioRoutes);
 app.use('/api/hero', heroRoutes);
 app.use('/api/link', linkRoutes);
+app.use('/api/spotlight', spotlightRoutes);
 
 
 app.use(express.static(path.join(__dirname, '../client/build')));

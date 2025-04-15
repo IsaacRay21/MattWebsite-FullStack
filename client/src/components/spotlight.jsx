@@ -3,6 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Carousel } from "./carousel"
 
 export const Spotlight = () => {
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const story_carouselRef = useRef(null);
     const storyRef = useRef(null);
 
@@ -31,7 +34,7 @@ export const Spotlight = () => {
         } else if (storyRef.current) {
             storyRef.current.style.height = "auto";  // Reset height when < 700px
         }
-    }, [viewportSize.width]);
+    }, [[], viewportSize.width]);
 
     useEffect(() => {
         updateStoryHeight();
@@ -47,14 +50,38 @@ export const Spotlight = () => {
         };
     }, []); 
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/spotlight');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const result = await response.json();
+                setData(result);
+            } catch (err) {
+                console.error("Failed to load Data:", err);
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) return <div className="spotlight-container">Loading...</div>;
+    if (error) return <div className="spotlight-container">Error: {error}</div>;
+    if (!data) return <div className="spotlight-container">No data available</div>;
+
     return (
         <div className="spotlight-container">
             <div className="story_carousel" ref={story_carouselRef}>
                 <Carousel type="storycarousel"/>
             </div>
             <div className="story" ref={storyRef}>
-                <h1>Title</h1>
-                <p>WASHINGTON—Flailing their arms and crying out in anguish, Eric Trump and Donald Trump Jr. were reportedly panicking Thursday after getting their tongues stuck to a frozen column near the West Wing of the White House. “Oh my God, it’s thtuck, it’s thtuck!” said Don Jr., the eldest Trump boy, who blamed his brother Eric for the dare gone wrong, shouting, “Thith ith all your fault!” and attempting to kick him in the shins from the awkward angle at which he was fastened to the icy building. “We’re going to die out here! We’re going to thtarve to death! Are you happy, Eric? You wanted to know what the White Houthe tathted like, and now you know! Whereth Thecret Thervice?! Whereth FEMA?!” At press time, the Trump boys were both seen frantically slapping their tongues with their hands.</p>
+                <h1>{data.title}</h1>
+                <p>{data.description}</p>
             </div>
         </div>
     )
